@@ -1,11 +1,11 @@
-FROM Ubuntu
+FROM ubuntu
 
 RUN apt update
-RUN apt install python
+RUN apt install -y python python-pip 
 
-RUN pip install -r requirements.txt
+RUN pip install flask 
 
-COPY . /opt/source-code
+COPY app.py /opt/app.py
 
-ENTRYPOINT FLASK_APP=/opt/source-code/app.py flask run
+ENTRYPOINT FLASK_APP=/opt/app.py flask run --host=0.0.0.0
 
