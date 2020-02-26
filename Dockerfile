@@ -3,7 +3,7 @@ FROM ubuntu
 RUN apt update
 RUN apt install -y python python-pip 
 
-RUN pip install flask 
+RUN pip install Flask 
 
 COPY app.py /opt/app.py
 
